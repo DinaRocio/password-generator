@@ -58,6 +58,9 @@ export const DeunaButton = () => {
                   backgroundColor: "transparent",
                   color: $theme.colors.buttonPrimaryFill,
                   borderRadius: "6px",
+                  ":hover": {
+                    color: "white",
+                  },
                 }),
               },
             }}

@@ -7,7 +7,7 @@ import { Client as Styletron } from "styletron-engine-atomic";
 import { Provider as StyletronProvider } from "styletron-react";
 import { BaseProvider } from "baseui";
 import { CustomTheme } from "./createTheme";
-// import { deunaTheme } from "@duna/theme";
+import { deunaTheme } from "./theme/createTheme";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const engine = new Styletron();
@@ -15,7 +15,7 @@ const engine = new Styletron();
 root.render(
   <React.StrictMode>
     <StyletronProvider value={engine}>
-      <BaseProvider theme={CustomTheme}>
+      <BaseProvider theme={deunaTheme}>
         <App />
       </BaseProvider>
     </StyletronProvider>

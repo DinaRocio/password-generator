@@ -1,13 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { Client as Styletron } from "styletron-engine-atomic";
+import { Provider as StyletronProvider } from "styletron-react";
+import { BaseProvider } from "baseui";
+import { CustomTheme } from "./createTheme";
+// import { deunaTheme } from "@duna/theme";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
+const engine = new Styletron();
+
 root.render(
   <React.StrictMode>
-    <App />
+    <StyletronProvider value={engine}>
+      <BaseProvider theme={CustomTheme}>
+        <App />
+      </BaseProvider>
+    </StyletronProvider>
   </React.StrictMode>
 );
 
